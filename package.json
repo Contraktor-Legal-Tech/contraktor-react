@@ -1,0 +1,29 @@
+{
+  "name": "contraktor-react",
+  "version": "1.0.0",
+  "description": "Contraktor React Starter Project",
+  "main": "dist/index.js",
+  "author": "Contraktor",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "rimraf ./dist && NODE_ENV=production babel src --out-dir dist --copy-files --ignore __tests__,.spec.js,.test.js,.stories.js,__snapshots__",
+    "start": "start-storybook -p 9001 -c internals/storybook"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.4.10",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-minify": "^0.4.3",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "rimraf": "^2.6.2",
+    "styled-components": "^3.4.2"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "styled-components": "^3.0.0"
+  }
+}
