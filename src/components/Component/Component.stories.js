@@ -6,4 +6,4 @@ import Component from './Component';
 storiesOf('Component', module)
   .add('default', () => (
     <Component />
-  ))
+  ));

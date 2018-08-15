@@ -1,8 +1,11 @@
 {
-  "presets": ["react"],
+  "presets": ["react", "stage-0"],
   "env": {
     "production": {
-      "presets": ["minify"]
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "transform-react-inline-elements"
+      ]
     }
   }
 }
