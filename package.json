@@ -4,7 +4,7 @@
   "description": "Contraktor React Starter Project",
   "main": "dist/index.js",
   "author": "Contraktor",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "build": "rimraf ./dist && NODE_ENV=production babel src --out-dir dist --copy-files --ignore __tests__,.spec.js,.test.js,.stories.js,__snapshots__",
