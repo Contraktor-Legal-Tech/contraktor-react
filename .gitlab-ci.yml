@@ -1,0 +1,37 @@
+image: node:8.11-alpine
+
+stages:
+- build
+- deploy
+
+cache:
+  key: "$CI_PIPELINE_ID"
+  paths:
+  - node_modules/
+
+build:
+  stage: build
+  script:
+  - yarn
+  - yarn build
+
+  # Create a tar file to import as an npm package
+  - mkdir $CI_PROJECT_NAME
+  - cp -r dist $CI_PROJECT_NAME/
+  - cp package.json $CI_PROJECT_NAME/package.json
+  - tar cvzf dist/package.tar.gz $CI_PROJECT_NAME
+  artifacts:
+    paths:
+    - dist/
+  only:
+  - tags
+
+deploy:
+  stage: deploy
+  image: python:latest
+  script:
+  - echo "$AWS_ACCESS_KEY_ID"
+  - pip install awscli
+  - aws s3 cp dist/ s3://static.contraktor.com.br/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/ --recursive --cache-control 86400 --acl public-read
+  only:
+  - tags

@@ -15,7 +15,7 @@ import 'semantic-ui-css/components/shape.css';
 import 'semantic-ui-css/components/table.css';
 import 'semantic-ui-css/components/ad.css';
 import 'semantic-ui-css/components/container.css';
-// import 'semantic-ui-css/components/flag.css';
+import 'semantic-ui-css/components/flag.css';
 import 'semantic-ui-css/components/input.css';
 import 'semantic-ui-css/components/message.css';
 import 'semantic-ui-css/components/rating.css';
